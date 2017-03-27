@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+//以下包要通过nuget导入
 using Microsoft.Extensions.Configuration;
 
 namespace wrBlogs.Net
@@ -15,7 +16,7 @@ namespace wrBlogs.Net
             var config = new ConfigurationBuilder()
                 //读取hosting.json配置
                 .AddJsonFile("hosting.json", optional: true)
-                //.AddCommandLine(args)
+                .AddCommandLine(args)
                 .Build();
 
             var host = new WebHostBuilder()

@@ -1,5 +1,5 @@
 ﻿{
-  "server.urls": "http://*:5000;http://*:8999",
+  "urls": "http://*:5002;http://*:8999",
   //环境参数，有Development(开发), Staging(预演), Production(生产)
   "environment": "Development"
 }
