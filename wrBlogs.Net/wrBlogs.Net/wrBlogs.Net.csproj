@@ -2,34 +2,65 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp1.1</TargetFramework>
+    <PackageTargetFallback>portable-net45+win8</PackageTargetFallback>
   </PropertyGroup>
 
   <ItemGroup>
     <Content Remove="launchSettings.json" />
+    <Content Remove="wwwroot/Content\js\amazeui.ie8polyfill.js" />
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="wwwroot\Content\css\amazeui.datatables.min.css" />
+    <Content Include="wwwroot\Content\css\amazeui.min.css" />
+    <Content Include="wwwroot\Content\css\app.css" />
+    <Content Include="wwwroot\Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="wwwroot\Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="wwwroot\Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="wwwroot\Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="wwwroot\Content\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\Content\images\logoa.png" />
+    <Content Include="wwwroot\Content\images\logob.png" />
+    <Content Include="wwwroot\Content\js\amazeui.ie8polyfill.js" />
+    <Content Include="wwwroot\Content\js\amazeui.js" />
+    <Content Include="wwwroot\Content\js\amazeui.min.js" />
+    <Content Include="wwwroot\Content\js\jquery.min.js" />
     <Content Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="wwwroot\Content\css\" />
-    <Folder Include="wwwroot\Content\js\" />
-    <Folder Include="wwwroot\Content\images\" />
-    <Folder Include="wwwroot\Content\font\" />
+    <Folder Include="Views\Shared\" />
     <Folder Include="wwwroot\Thrid\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.TagHelpers" Version="1.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Session" Version="1.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="1.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer.Design" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="1.1.1" />
     <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="1.1.0" />
     <PackageReference Include="System.Text.Encoding.CodePages" Version="4.3.0" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="hosting.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\wrBlogs.Net.Utils\wrBlogs.Net.Utils.csproj" />
+    <ProjectReference Include="..\wrBlogs.Net.ViewModel\wrBlogs.Net.ViewModel.csproj" />
   </ItemGroup>
   <ProjectExtensions>
     <VisualStudio>

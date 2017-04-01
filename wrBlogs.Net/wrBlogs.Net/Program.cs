@@ -17,6 +17,7 @@ namespace wrBlogs.Net
                 //读取hosting.json配置
                 .AddJsonFile("hosting.json", optional: true)
                 .AddCommandLine(args)
+                .AddEnvironmentVariables(prefix: "ASPNETCORE_")
                 .Build();
 
             var host = new WebHostBuilder()
