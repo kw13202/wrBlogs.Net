@@ -12,6 +12,10 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Session;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.Extensions.Configuration;
+using Microsoft.EntityFrameworkCore;
+
+using wrBlogs.Net.Context;
+
 
 namespace wrBlogs.Net
 {
@@ -33,6 +37,15 @@ namespace wrBlogs.Net
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            //获取数据库连接字符串
+            var sqlConnectionString = Configuration.GetConnectionString("Default");
+            //添加数据上下文
+            services.AddDbContext<BlogDbContext>(options =>
+                options.UseSqlServer(sqlConnectionString)
+            );
+            //依赖注入
+            services.AddScoped<IUserRepository, UserRepository>();
+
             //添加MVC  --Microsoft.AspNetCore.Mvc
             services.AddMvc();
             //添加缓存  --Microsoft.Extensions.Caching.Memory
@@ -83,6 +96,8 @@ namespace wrBlogs.Net
             app.UseSession();
             //启用静态文件  --Microsoft.AspNetCore.StaticFiles
             app.UseStaticFiles();
+            //初始化数据
+            SeedData.Initialize(app.ApplicationServices);
         }
     }
 }

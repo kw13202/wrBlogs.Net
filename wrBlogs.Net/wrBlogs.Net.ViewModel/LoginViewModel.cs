@@ -7,14 +7,11 @@ namespace wrBlogs.Net.ViewModel
 {
     public class LoginViewModel
     {
-        [Required]
-        [Display(Name = "UserName")]
-        [EmailAddress]
+        [Required(ErrorMessage = "用户名不能为空")]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "密码不能为空")]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
         public string Password { get; set; }
     }
 }

@@ -14,6 +14,7 @@
     <Content Include="wwwroot\Content\css\amazeui.datatables.min.css" />
     <Content Include="wwwroot\Content\css\amazeui.min.css" />
     <Content Include="wwwroot\Content\css\app.css" />
+    <Content Include="wwwroot\Content\css\custom.css" />
     <Content Include="wwwroot\Content\fonts\fontawesome-webfont.eot" />
     <Content Include="wwwroot\Content\fonts\fontawesome-webfont.ttf" />
     <Content Include="wwwroot\Content\fonts\fontawesome-webfont.woff" />
@@ -21,10 +22,11 @@
     <Content Include="wwwroot\Content\fonts\FontAwesome.otf" />
     <Content Include="wwwroot\Content\images\logoa.png" />
     <Content Include="wwwroot\Content\images\logob.png" />
-    <Content Include="wwwroot\Content\js\amazeui.ie8polyfill.js" />
-    <Content Include="wwwroot\Content\js\amazeui.js" />
-    <Content Include="wwwroot\Content\js\amazeui.min.js" />
-    <Content Include="wwwroot\Content\js\jquery.min.js" />
+    <Content Include="wwwroot\Content\js\common\amazeui.js" />
+    <Content Include="wwwroot\Content\js\common\amazeui.min.js" />
+    <Content Include="wwwroot\Content\js\common\jquery.min.js" />
+    <Content Include="wwwroot\Content\js\data\messages_zh.js" />
+    <Content Include="wwwroot\Content\js\manage\login.js" />
     <Content Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
@@ -59,6 +61,7 @@
     <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.0" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\wrBlogs.Net.Context\wrBlogs.Net.Context.csproj" />
     <ProjectReference Include="..\wrBlogs.Net.Utils\wrBlogs.Net.Utils.csproj" />
     <ProjectReference Include="..\wrBlogs.Net.ViewModel\wrBlogs.Net.ViewModel.csproj" />
   </ItemGroup>
