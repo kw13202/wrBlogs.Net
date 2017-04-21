@@ -17,11 +17,20 @@ namespace wrBlogs.Net.Controllers
             _userRepository = userRepository;
         }
 
+        /// <summary>
+        /// µÇÂ¼½çÃæ
+        /// </summary>
+        /// <returns></returns>
         public IActionResult LoginIn()
         {
             return View();
         }
 
+        /// <summary>
+        /// µÇÂ¼
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> LoginIn(LoginViewModel model)
         {
