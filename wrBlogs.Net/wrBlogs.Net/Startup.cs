@@ -41,7 +41,10 @@ namespace wrBlogs.Net
             var sqlConnectionString = Configuration.GetConnectionString("Default");
             //添加数据上下文
             services.AddDbContext<BlogDbContext>(options =>
-                options.UseSqlServer(sqlConnectionString)
+                //SqlServer
+                //options.UseSqlServer(sqlConnectionString)
+                //Sqlite
+                options.UseSqlite(sqlConnectionString)
             );
             //依赖注入
             services.AddScoped<IUserRepository, UserRepository>();

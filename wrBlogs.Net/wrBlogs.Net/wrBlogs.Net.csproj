@@ -20,6 +20,7 @@
     <Content Include="wwwroot\Content\fonts\fontawesome-webfont.woff" />
     <Content Include="wwwroot\Content\fonts\fontawesome-webfont.woff2" />
     <Content Include="wwwroot\Content\fonts\FontAwesome.otf" />
+    <Content Include="wwwroot\Content\images\logo.png" />
     <Content Include="wwwroot\Content\images\logoa.png" />
     <Content Include="wwwroot\Content\images\logob.png" />
     <Content Include="wwwroot\Content\js\common\amazeui.js" />

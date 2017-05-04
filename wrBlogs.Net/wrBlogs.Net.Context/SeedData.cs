@@ -14,8 +14,8 @@ namespace wrBlogs.Net.Context
         {
             using (var context = new BlogDbContext(serviceProvider.GetRequiredService<DbContextOptions<BlogDbContext>>()))
             {
-                //context.Database.EnsureDeleted();
-                //context.Database.EnsureCreated();
+                context.Database.EnsureDeleted();
+                context.Database.EnsureCreated();
 
                 if (context.User.Any())
                 {
