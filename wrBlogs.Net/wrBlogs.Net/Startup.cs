@@ -43,11 +43,13 @@ namespace wrBlogs.Net
             services.AddDbContext<BlogDbContext>(options =>
                 //SqlServer
                 //options.UseSqlServer(sqlConnectionString)
+
                 //Sqlite
                 options.UseSqlite(sqlConnectionString)
             );
             //依赖注入
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<ICategoryRepository, CategoryRepository>();
 
             //添加MVC  --Microsoft.AspNetCore.Mvc
             services.AddMvc();

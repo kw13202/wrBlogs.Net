@@ -11,8 +11,12 @@ namespace wrBlogs.Net.Model
         /// </summary>
         public string CategoryName { get; set; }
         /// <summary>
-        /// 排序
+        /// 是否显示
         /// </summary>
-        public int Sort { get; set; }
+        public bool IsVisible { get; set; }
+        /// <summary>
+        /// 博文-分类集合
+        /// </summary>
+        public virtual ICollection<ArticleCategory> ArticleCategory { get; set; }
     }
 }

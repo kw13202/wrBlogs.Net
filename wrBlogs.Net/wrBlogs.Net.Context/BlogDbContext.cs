@@ -38,6 +38,11 @@ namespace wrBlogs.Net.Context
             builder.Entity<Article>().Property(x => x.Summary).HasMaxLength(300);
             builder.Entity<Article>().Property(x => x.Context).HasColumnName("text");
 
+            builder.Entity<ArticleCategory>().ToTable("ArticleCategory");
+            builder.Entity<ArticleCategory>().HasKey(x => new { x.ArticleId , x.CategoryId });
+            builder.Entity<ArticleCategory>().HasOne(x => x.Article).WithMany(x => x.ArticleCategory).HasForeignKey(x => x.ArticleId);
+            builder.Entity<ArticleCategory>().HasOne(x => x.Category).WithMany(x => x.ArticleCategory).HasForeignKey(x => x.CategoryId);
+
             base.OnModelCreating(builder);
         }
     }

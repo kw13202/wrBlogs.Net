@@ -19,8 +19,8 @@ namespace wrBlogs.Net.Model
         /// </summary>
         public string Context { get; set; }
         /// <summary>
-        /// 分类Id
+        /// 博文-分类集合
         /// </summary>
-        public int CategoryId { get; set; }
+        public virtual ICollection<ArticleCategory> ArticleCategory { get; set; }
     }
 }

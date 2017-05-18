@@ -32,6 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Views\Category\" />
     <Folder Include="wwwroot\Thrid\" />
     <Folder Include="Controllers\" />
   </ItemGroup>
