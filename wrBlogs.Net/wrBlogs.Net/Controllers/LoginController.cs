@@ -37,7 +37,7 @@ namespace wrBlogs.Net.Controllers
             if (ModelState.IsValid)
             {
                 //检查用户信息
-                var user = _userRepository.CheckUser(model.UserName, model.Password);
+                var user = await _userRepository.CheckUser(model.UserName, model.Password);
                 if(user != null)
                 {
                     //跳转到系统首页

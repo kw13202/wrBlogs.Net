@@ -1,0 +1,31 @@
+﻿@model wrBlogs.Net.Model.PagedList
+@{
+}
+<div class="am-u-lg-12 am-cf">
+    <div class="am-fr">
+        <ul class="am-pagination tpl-pagination">
+            @{
+                if (Model.TotalCount > 0)
+                {
+                    <li class="@(Model.HasPrePage ? "":"am-disabled")">
+                        <a href="@(Model.HasPrePage ? ("javascript:GoPage(" + (Model.PageIndex - 1).ToString() + ");"):"javascript:void(0);")">«</a>
+                    </li>
+                    for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        <li class="@(Model.PageIndex == i ? "am-active":"")">
+                            <a href="@(Model.PageIndex == i ? "javascript:void(0);":("javascript:GoPage(" + (i).ToString() + ");"))">@(i)</a>
+                        </li>
+                    }
+                    <li class="@(Model.HasNextPage ? "":"am-disabled")">
+                        <a href="@(Model.HasNextPage ? ("javascript:GoPage(" + (Model.PageIndex + 1).ToString() + ");"):"javascript:void(0);")">»</a>
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+
+
+
+
+

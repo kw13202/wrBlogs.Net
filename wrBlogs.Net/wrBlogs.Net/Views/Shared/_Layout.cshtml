@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="~/Content/css/custom.css" />
         <script type="text/javascript" charset="utf-8" src="~/Content/js/common/jquery.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="~/Content/js/common/amazeui.js"></script>
+        <script type="text/javascript" charset="utf-8" src="~/Content/js/common/utils.js"></script>
         <script type="text/javascript" charset="utf-8" src="http://cdn.bootcss.com/jquery-validate/1.16.0/jquery.validate.js"></script>
         <script type="text/javascript" charset="utf-8" src="~/Content/js/data/messages_zh.js"></script>
     </environment>
@@ -30,9 +31,12 @@
         <link rel="stylesheet" href="~/Content/css/custom.css" />
         <script type="text/javascript" charset="utf-8" src="~/Content/js/common/jquery.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="~/Content/js/common/amazeui.min.js"></script>
+        <script type="text/javascript" charset="utf-8" src="~/Content/js/common/utils.js"></script>
         <script type="text/javascript" charset="utf-8" src="http://cdn.bootcss.com/jquery-validate/1.16.0/jquery.validate.min.js"></script>
         <script type="text/javascript" charset="utf-8" src="~/Content/js/data/messages_zh.js"></script>
     </environment>
+
+    @RenderSection("head", required: false)
 </head>
 <body class="theme-black">
     <div class="am-g tpl-g">
@@ -194,5 +198,6 @@
             @RenderBody()
         </div>
     </div>
+    @RenderSection("foot", required: false)
 </body>
 </html>

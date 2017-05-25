@@ -25,8 +25,10 @@
     <Content Include="wwwroot\Content\images\logob.png" />
     <Content Include="wwwroot\Content\js\common\amazeui.js" />
     <Content Include="wwwroot\Content\js\common\amazeui.min.js" />
+    <Content Include="wwwroot\Content\js\common\utils.js" />
     <Content Include="wwwroot\Content\js\common\jquery.min.js" />
     <Content Include="wwwroot\Content\js\data\messages_zh.js" />
+    <Content Include="wwwroot\Content\js\manage\category.js" />
     <Content Include="wwwroot\Content\js\manage\login.js" />
     <Content Include="wwwroot\favicon.ico" />
   </ItemGroup>

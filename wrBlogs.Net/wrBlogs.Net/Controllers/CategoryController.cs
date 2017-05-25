@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using wrBlogs.Net.ViewModel;
+using wrBlogs.Net.Model;
 using wrBlogs.Net.Context;
 
 namespace wrBlogs.Net.Controllers
@@ -22,10 +23,15 @@ namespace wrBlogs.Net.Controllers
         /// 分类列表界面
         /// </summary>
         /// <returns></returns>
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<IActionResult> Index(int? pageIndex, int? pageSize)
         {
-            
-            return View();
+            if (!pageIndex.HasValue)
+                pageIndex = 1;
+            if (!pageSize.HasValue)
+                pageSize = ConfigParams.pageSize;
+            var page = await _categoryRepository.GetPage(pageIndex.Value, pageSize.Value);
+            return View(page);
         } 
         #endregion
 

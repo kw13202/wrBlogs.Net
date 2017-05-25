@@ -30,6 +30,21 @@ namespace wrBlogs.Net.Context
                     LoginPwd = "admin",//暂不进行加密
                     IP = "127.0.0.1"
                 });
+                //添加分类
+                var categoryList = new List<Model.Category>
+                {
+                    new Model.Category{ CategoryName = "C#", IsVisible = true },
+                    new Model.Category{ CategoryName = "SQL", IsVisible = true },
+                    new Model.Category{ CategoryName = "Java", IsVisible = true },
+                    new Model.Category{ CategoryName = "JavaScript", IsVisible = true },
+                    new Model.Category{ CategoryName = "NodeJS", IsVisible = true },
+                    new Model.Category{ CategoryName = "VueJS", IsVisible = true },
+                    new Model.Category{ CategoryName = "CSS", IsVisible = true },
+                    new Model.Category{ CategoryName = "HTML", IsVisible = true },
+                    new Model.Category{ CategoryName = "Python", IsVisible = true },
+                    new Model.Category{ CategoryName = "C++", IsVisible = true },
+                };
+                context.Category.AddRange(categoryList);
 
                 context.SaveChanges();
             }
