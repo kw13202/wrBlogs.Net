@@ -75,6 +75,9 @@ namespace wrBlogs.Net
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            // 重要: session的注册必须在UseMvc之前，因为MVC里面要用
+            Configure(app);
+
             //设置路由规则
             app.UseMvc(routes =>
             {
@@ -82,12 +85,6 @@ namespace wrBlogs.Net
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
-            //app.Run(async (context) =>
-            //{
-            //    await context.Response.WriteAsync("Hello World!");
-            //});
-
-            Configure(app);
         }
 
         /// <summary>

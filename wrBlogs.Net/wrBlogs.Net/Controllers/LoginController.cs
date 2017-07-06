@@ -2,9 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.IO;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using wrBlogs.Net.ViewModel;
 using wrBlogs.Net.Context;
+using wrBlogs.Net.Utils;
 
 namespace wrBlogs.Net.Controllers
 {
@@ -49,6 +52,16 @@ namespace wrBlogs.Net.Controllers
             //取第一条错误信息
             ViewBag.ErrorInfo = ModelState.Values.First().Errors[0].ErrorMessage;
             return View(model);
+        }
+
+        [HttpGet]
+        public IActionResult ValidateCode()
+        {
+            string code = "";
+            CodeHelper helper = new CodeHelper();
+            MemoryStream ms = helper.Create(out code);
+            HttpContext.Session.SetString("LoginValidateCode", code);
+            return File(ms.ToArray(), @"image/png");
         }
     }
 }
